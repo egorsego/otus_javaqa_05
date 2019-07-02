@@ -19,7 +19,7 @@ public class YandexMarketTest {
     private static final Logger logger = LogManager.getLogger(YandexMarketTest.class);
     private static final String START_PAGE = "https://ya.ru/";
     private static WebDriver driver;
-    private static final long TIMEOUT = 30;
+    private static final long TIMEOUT = 20;
     private static WebDriverWait wait;
     private static final String smartphoneBrandOne = "ASUS";
     private static final String smartphoneBrandTwo = "Honor";
@@ -27,6 +27,7 @@ public class YandexMarketTest {
     @BeforeClass
     public static void generalSetup(){
         driver = WebDriverFactory.createDriver(WebDriverType.valueOf("CHROME"));
+        //driver.manage().timeouts().implicitlyWait(TIMEOUT, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, TIMEOUT);
         driver.manage().window().maximize();
 
